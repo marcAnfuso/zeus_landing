@@ -57,9 +57,21 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="bg-black text-white overflow-x-hidden h-auto">
+      {/* Zeus GPT Background Image */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <img
+          src="/zeus-gpt2.webp"
+          alt="Zeus Background"
+          className="w-full h-full object-cover lg:object-contain lg:object-center"
+        />
+      </div>
+
+      {/* Dark overlay for better text readability */}
+      <div className="fixed inset-0 bg-black/60 pointer-events-none" style={{zIndex: 1}}></div>
+
       {/* Animated red gradient background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-red-600/20 rounded-full blur-[120px] animate-float"></div>
         <div className="absolute top-1/2 -left-40 w-96 h-96 bg-red-700/20 rounded-full blur-[120px] animate-float-delayed"></div>
         <div className="absolute bottom-20 right-1/3 w-72 h-72 bg-red-500/10 rounded-full blur-[100px] animate-float-slow"></div>
@@ -159,34 +171,44 @@ export default function Home() {
       </div>
 
       {/* Main Container - MOBILE FIRST: Single Column */}
-      <div className="relative z-10 flex flex-col lg:flex-row lg:min-h-screen">
+      <div className="relative z-10 flex flex-col lg:flex-row lg:min-h-screen h-auto">
 
-        {/* MOBILE: Logo top, horizontal layout, buttons bottom */}
-        <div className="flex flex-col items-center justify-start pt-4 pb-2 px-4 lg:hidden relative gap-3">
+        {/* MOBILE: Logo top, cards, space for Zeus background, buttons bottom */}
+        <div className="flex flex-col items-center justify-start pt-6 pb-0 px-4 lg:hidden relative">
 
           {/* Logo CASINO ZEUS */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-center relative w-full px-4 mb-3"
+            className="text-center relative w-full px-4 mb-6"
+            style={{overflow: 'visible', lineHeight: 0}}
           >
             <img
               src="/cropped-logo-casino.png"
               alt="Casino Zeus"
               className="w-full h-auto max-w-md mx-auto"
-              style={{maxHeight: '100px', objectFit: 'contain'}}
+              style={{
+                maxHeight: '100px',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 0 6px rgba(0, 0, 0, 0.9)) drop-shadow(-4px 0 15px rgba(250, 128, 114, 0.8)) drop-shadow(-8px 0 25px rgba(250, 128, 114, 0.6)) drop-shadow(4px 0 15px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 35px rgba(220, 38, 38, 0.4))',
+                display: 'block',
+                verticalAlign: 'top'
+              }}
             />
           </motion.div>
 
-          {/* 4 Feature Boxes - 2x2 Grid Above Zeus */}
+          {/* Spacer for Zeus background image visibility */}
+          <div className="w-full" style={{height: '280px'}}></div>
+
+          {/* 4 Feature Boxes - 1 on top, 3 on bottom - Just above buttons */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="grid grid-cols-2 gap-2"
-            style={{width: '280px'}}
+            className="flex flex-col gap-2 mb-6 items-center"
           >
+            {/* Top Row: Retiros card centered - same width as 3 cards below */}
             <motion.div
               className="relative"
               animate={{
@@ -195,215 +217,85 @@ export default function Home() {
                   'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
                   'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
                 ],
-                scale: [1, 1.05, 1]
+                scale: [1, 1.1, 1]
               }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              style={{width: 'calc(120px * 3 + 0.5rem * 2)', maxHeight: '70px'}}
             >
-              <img src="/retiros-blueglow.png" alt="Retiros 24hs" style={{width: '135px', height: 'auto'}} className="object-contain" />
+              <img src="/retiros-blueglow.png" alt="Retiros 24hs" style={{width: '100%', height: 'auto', maxHeight: '70px'}} className="object-contain" />
             </motion.div>
-            <motion.div
-              className="relative"
-              animate={{
-                filter: [
-                  'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                  'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                  'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                ],
-                scale: [1, 1.05, 1]
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            >
-              <img src="/pagos-blueglow.png" alt="Pagos Instantáneos" style={{width: '135px', height: 'auto'}} className="object-contain" />
-            </motion.div>
-            <motion.div
-              className="relative"
-              animate={{
-                filter: [
-                  'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                  'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                  'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                ],
-                scale: [1, 1.05, 1]
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            >
-              <img src="/juegos-blueglow.png" alt="+5000 Juegos" style={{width: '135px', height: 'auto'}} className="object-contain" />
-            </motion.div>
-            <motion.div
-              className="relative"
-              animate={{
-                filter: [
-                  'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                  'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                  'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                ],
-                scale: [1, 1.05, 1]
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-            >
-              <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '135px', height: 'auto'}} className="object-contain" />
-            </motion.div>
+
+            {/* Bottom Row: 3 cards */}
+            <div className="flex flex-row gap-2 justify-center">
+              <motion.div
+                className="relative"
+                animate={{
+                  filter: [
+                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                    'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
+                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                  ],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              >
+                <img src="/pagos-blueglow.png" alt="Pagos Instantáneos" style={{width: '120px', height: 'auto'}} className="object-contain" />
+              </motion.div>
+              <motion.div
+                className="relative"
+                animate={{
+                  filter: [
+                    'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
+                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                    'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
+                  ],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <img src="/juegos-blueglow.png" alt="+5000 Juegos" style={{width: '120px', height: 'auto'}} className="object-contain" />
+              </motion.div>
+              <motion.div
+                className="relative"
+                animate={{
+                  filter: [
+                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                    'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
+                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                  ],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              >
+                <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '120px', height: 'auto'}} className="object-contain" />
+              </motion.div>
+            </div>
           </motion.div>
 
-          {/* Zeus Character - CENTERED with Lightning Glow */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="w-96 h-96 flex-shrink-0 relative"
-          >
-            {/* Glowing effect on the lightning bolt area (top right) */}
-            <motion.div
-              className="absolute top-8 right-12 w-24 h-32 -z-10"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(255,223,0,0.4) 0%, rgba(255,200,0,0.2) 40%, transparent 70%)',
-                filter: 'blur(20px)',
-              }}
-              animate={{
-                opacity: [0.6, 1, 0.6],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Electric sparkle particles around lightning */}
-            <motion.div
-              className="absolute top-10 right-16 w-2 h-2 bg-yellow-300 rounded-full"
-              style={{
-                boxShadow: '0 0 10px rgba(255,223,0,1)',
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                y: [0, -10, -20],
-                x: [0, 5, 10],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeOut",
-              }}
-            />
-            <motion.div
-              className="absolute top-16 right-14 w-1.5 h-1.5 bg-yellow-200 rounded-full"
-              style={{
-                boxShadow: '0 0 8px rgba(255,223,0,0.8)',
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                y: [0, -8, -15],
-                x: [0, -3, -6],
-              }}
-              transition={{
-                duration: 2.2,
-                repeat: Infinity,
-                ease: "easeOut",
-                delay: 0.3,
-              }}
-            />
-            <motion.div
-              className="absolute top-12 right-12 w-1 h-1 bg-white rounded-full"
-              style={{
-                boxShadow: '0 0 6px rgba(255,255,255,1)',
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                y: [0, -12, -22],
-                x: [0, 8, 15],
-              }}
-              transition={{
-                duration: 1.8,
-                repeat: Infinity,
-                ease: "easeOut",
-                delay: 0.6,
-              }}
-            />
-
-            {/* Floating coins animation */}
-            <motion.div
-              className="absolute top-1/3 left-8 text-3xl"
-              animate={{
-                y: [0, -20, 0],
-                rotate: [0, 360],
-                opacity: [0.6, 1, 0.6],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              🪙
-            </motion.div>
-            <motion.div
-              className="absolute top-1/2 right-10 text-2xl"
-              animate={{
-                y: [0, -15, 0],
-                rotate: [0, -360],
-                opacity: [0.5, 0.9, 0.5],
-              }}
-              transition={{
-                duration: 3.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-            >
-              🪙
-            </motion.div>
-
-            {/* Hair glow effect - positioned over upper portion only */}
-            <motion.div
-              className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[35%] rounded-full blur-3xl pointer-events-none"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.25) 0%, rgba(56,189,248,0.2) 40%, transparent 70%)'
-              }}
-              animate={{
-                opacity: [0.6, 0.85, 0.6],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            />
-
-            <img
-              src="/zeus.png"
-              alt="Zeus"
-              className="w-full h-full object-contain drop-shadow-2xl relative z-10"
-            />
-          </motion.div>
-
-          {/* Bottom Section: Buttons - SMALLER */}
+          {/* Bottom Section: Buttons */}
           <div className="w-full max-w-sm px-4">
-            <div className="flex flex-col gap-3 mb-4">
+            <div className="flex flex-col gap-3 mb-2">
               <motion.a
                 href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20mi%20usuario%20de%20Zeus"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick('main_button')}
-                className="relative overflow-hidden text-white font-black text-base px-6 py-3 rounded-xl flex items-center justify-center gap-2 border-2"
+                className="relative overflow-visible text-white font-black text-base px-6 py-2 flex items-center justify-center gap-2"
                 style={{
-                  background: 'linear-gradient(90deg, #ef4444 0%, #dc2626 50%, #ef4444 100%)',
-                  borderColor: 'rgba(239, 68, 68, 0.6)',
+                  clipPath: 'polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px)',
+                  background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%)',
                 }}
                 whileTap={{ scale: 0.95 }}
                 whileHover={{ scale: 1.02 }}
                 animate={{
                   boxShadow: [
-                    "0 0 30px rgba(239, 68, 68, 0.8)",
-                    "0 0 50px rgba(239, 68, 68, 1)",
-                    "0 0 30px rgba(239, 68, 68, 0.8)"
+                    "0 0 30px rgba(239, 68, 68, 0.8), 0 0 50px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 2px 10px rgba(255, 255, 255, 0.3), inset 0 -2px 10px rgba(0, 0, 0, 0.5)",
+                    "0 0 50px rgba(239, 68, 68, 1), 0 0 70px rgba(251, 191, 36, 0.8), 0 0 2px 2px rgba(251, 191, 36, 1), inset 0 2px 10px rgba(255, 255, 255, 0.4), inset 0 -2px 10px rgba(0, 0, 0, 0.6)",
+                    "0 0 30px rgba(239, 68, 68, 0.8), 0 0 50px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 2px 10px rgba(255, 255, 255, 0.3), inset 0 -2px 10px rgba(0, 0, 0, 0.5)"
                   ],
-                  background: [
-                    'linear-gradient(90deg, #ef4444 0%, #dc2626 50%, #ef4444 100%)',
-                    'linear-gradient(90deg, #dc2626 0%, #ef4444 50%, #dc2626 100%)',
-                    'linear-gradient(90deg, #ef4444 0%, #dc2626 50%, #ef4444 100%)',
-                  ]
                 }}
                 transition={{
                   boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-                  background: { duration: 3, repeat: Infinity, ease: "easeInOut" }
                 }}
               >
                 {/* Left Lightning Bolt with Variable Thunder Effect - INSIDE */}
@@ -492,10 +384,11 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick('secondary_button')}
-                className="bg-green-600/20 active:bg-green-600/30 border-2 border-green-500/50 text-white font-semibold text-sm px-4 py-2.5 rounded-lg flex items-center justify-center gap-2"
+                className="bg-green-600/20 active:bg-green-600/30 border-2 border-green-500/50 text-white font-semibold text-xs px-3 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto"
+                style={{width: '75%'}}
                 whileTap={{ scale: 0.95 }}
               >
-                <WhatsAppIcon className="w-4 h-4 text-green-400" />
+                <WhatsAppIcon className="w-3.5 h-3.5 text-green-400" />
                 <span>Escribinos al WhatsApp</span>
               </motion.a>
             </div>
@@ -507,18 +400,20 @@ export default function Home() {
               variants={fadeIn}
               className="w-full max-w-sm px-4 mt-2"
             >
-              <div className="flex flex-col gap-2 text-center">
-                <div className="flex items-center justify-center gap-2 text-yellow-400 font-semibold text-sm">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
-                  </svg>
-                  <span>+12.000 usuarios activos</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-gray-400 font-semibold text-sm">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                  <span>+18 Juego Responsable</span>
+              <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 backdrop-blur-sm">
+                <div className="flex flex-col gap-2 text-center">
+                  <div className="flex items-center justify-center gap-2 text-yellow-400 font-bold text-sm">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" style={{filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))'}}>
+                      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                    </svg>
+                    <span style={{textShadow: '0 0 8px rgba(255, 215, 0, 0.8), 0 0 12px rgba(255, 215, 0, 0.5)'}}>+8.500 usuarios activos</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-white font-bold text-sm">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span>+18 Juego Responsable</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -533,29 +428,33 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-center relative w-full pt-8 pb-4 px-8"
+            className="text-center relative w-full pt-12 pb-16 px-8"
           >
             <img
               src="/cropped-logo-casino.png"
               alt="Casino Zeus"
-              className="w-full h-auto mx-auto"
-              style={{maxHeight: '120px', objectFit: 'contain'}}
+              className="h-auto mx-auto"
+              style={{
+                maxHeight: '120px',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 0 10px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 15px rgba(0, 0, 0, 0.8)) drop-shadow(-6px 0 25px rgba(250, 128, 114, 0.9)) drop-shadow(-10px 0 40px rgba(250, 128, 114, 0.7)) drop-shadow(6px 0 25px rgba(255, 255, 255, 0.5)) drop-shadow(10px 0 40px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 55px rgba(220, 38, 38, 0.4))'
+              }}
             />
           </motion.div>
 
-          {/* Three column layout - Cards Left, Zeus Center, Buttons Right */}
-          <div className="grid grid-cols-[1fr_auto_1fr] gap-24 flex-1 items-center px-16 pb-8 w-full mx-auto">
+          {/* Two column layout - Cards Left, Buttons Right (Zeus background image) */}
+          <div className="grid grid-cols-2 gap-16 flex-1 items-center px-12 pb-16 w-full max-w-7xl mx-auto">
 
-            {/* Left Column: 4 Feature Cards - Vertical Stack */}
+            {/* Left Column: 4 Feature Cards - 2x2 Grid */}
             <motion.aside
               initial="hidden"
               animate="visible"
               variants={slideFromLeft}
-              className="flex flex-col items-end justify-center gap-6"
+              className="flex items-center justify-end"
             >
               <motion.div
                 variants={fadeIn}
-                className="flex flex-col gap-6"
+                className="grid grid-cols-2 gap-4"
               >
                 <motion.div
                   className="relative"
@@ -564,11 +463,12 @@ export default function Home() {
                       'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
                       'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
                       'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                    ]
+                    ],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <img src="/retiros-blueglow.png" alt="Retiros 24hs" style={{width: '280px', height: 'auto'}} className="object-contain" />
+                  <img src="/retiros-blueglow.png" alt="Retiros 24hs" style={{width: '180px', height: 'auto'}} className="object-contain" />
                 </motion.div>
                 <motion.div
                   className="relative"
@@ -577,11 +477,12 @@ export default function Home() {
                       'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
                       'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
                       'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                    ]
+                    ],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 >
-                  <img src="/pagos-blueglow.png" alt="Pagos Instantáneos" style={{width: '280px', height: 'auto'}} className="object-contain" />
+                  <img src="/pagos-blueglow.png" alt="Pagos Instantáneos" style={{width: '180px', height: 'auto'}} className="object-contain" />
                 </motion.div>
                 <motion.div
                   className="relative"
@@ -590,11 +491,12 @@ export default function Home() {
                       'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
                       'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
                       'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                    ]
+                    ],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
-                  <img src="/juegos-blueglow.png" alt="+5000 Juegos" style={{width: '280px', height: 'auto'}} className="object-contain" />
+                  <img src="/juegos-blueglow.png" alt="+5000 Juegos" style={{width: '180px', height: 'auto'}} className="object-contain" />
                 </motion.div>
                 <motion.div
                   className="relative"
@@ -603,79 +505,15 @@ export default function Home() {
                       'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
                       'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
                       'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                    ]
+                    ],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                 >
-                  <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '280px', height: 'auto'}} className="object-contain" />
+                  <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '180px', height: 'auto'}} className="object-contain" />
                 </motion.div>
               </motion.div>
             </motion.aside>
-
-            {/* Center Column: Zeus Character Only */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              className="flex items-center justify-center"
-            >
-              {/* Zeus Character with Lightning Glow */}
-              <motion.div
-                className="w-[650px] h-[650px] flex-shrink-0 relative"
-              >
-                {/* Glowing effect on the lightning bolt area (top right) */}
-                <motion.div
-                  className="absolute top-12 right-16 w-32 h-40 -z-10"
-                  style={{
-                    background: 'radial-gradient(ellipse at center, rgba(255,223,0,0.4) 0%, rgba(255,200,0,0.2) 40%, transparent 70%)',
-                    filter: 'blur(20px)',
-                  }}
-                  animate={{ opacity: [0.6, 1, 0.6] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                />
-
-                {/* Electric sparkle particles */}
-                {mounted && [...Array(8)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-1 h-1 bg-yellow-300 rounded-full"
-                    style={{
-                      top: `${25 + Math.random() * 30}%`,
-                      right: `${15 + Math.random() * 20}%`,
-                    }}
-                    animate={{
-                      opacity: [0, 1, 0],
-                      scale: [0.5, 1.5, 0.5],
-                    }}
-                    transition={{
-                      duration: 1 + Math.random(),
-                      repeat: Infinity,
-                      delay: Math.random() * 2,
-                    }}
-                  />
-                ))}
-
-
-                {/* Hair glow effect - positioned over upper portion only */}
-                <motion.div
-                  className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[35%] rounded-full blur-3xl pointer-events-none z-20"
-                  style={{
-                    background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%, rgba(56,189,248,0.25) 40%, transparent 70%)'
-                  }}
-                  animate={{
-                    opacity: [0.6, 0.9, 0.6],
-                    scale: [1, 1.15, 1],
-                  }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                />
-
-                <img
-                  src="/zeus.png"
-                  alt="Zeus"
-                  className="w-full h-full object-contain drop-shadow-2xl relative z-10"
-                />
-              </motion.div>
-            </motion.div>
 
             {/* Right Column: CTA Buttons + Trust Badges */}
             <motion.aside
@@ -691,9 +529,23 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => handleWhatsAppClick('main_button')}
-                  className="relative overflow-hidden bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-black text-xl px-10 py-5 rounded-xl shadow-2xl shadow-red-500/50 hover:shadow-red-500/70 transition-all duration-300 flex items-center justify-center gap-3"
+                  className="relative overflow-visible text-white font-black text-xl px-10 py-5 flex items-center justify-center gap-3 transition-all duration-300"
+                  style={{
+                    clipPath: 'polygon(16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px)',
+                    background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%)',
+                  }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  animate={{
+                    boxShadow: [
+                      "0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 3px 15px rgba(255, 255, 255, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.5)",
+                      "0 0 60px rgba(239, 68, 68, 1), 0 0 80px rgba(251, 191, 36, 0.8), 0 0 2px 2px rgba(251, 191, 36, 1), inset 0 3px 15px rgba(255, 255, 255, 0.4), inset 0 -3px 15px rgba(0, 0, 0, 0.6)",
+                      "0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 3px 15px rgba(255, 255, 255, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.5)"
+                    ],
+                  }}
+                  transition={{
+                    boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                  }}
                 >
                   {/* Left Lightning Bolt */}
                   <motion.svg
@@ -785,17 +637,21 @@ export default function Home() {
                 variants={fadeIn}
                 className="flex flex-col gap-3 w-full mt-4"
               >
-                <div className="flex items-center gap-3 text-yellow-400 font-bold text-base">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
-                  </svg>
-                  <span>+12.000 usuarios activos</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-400 font-bold text-base">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                  <span>+18 Juego Responsable</span>
+                <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 backdrop-blur-sm">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-3 text-yellow-400 font-bold text-base">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" style={{filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))'}}>
+                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                      </svg>
+                      <span style={{textShadow: '0 0 8px rgba(255, 215, 0, 0.8), 0 0 12px rgba(255, 215, 0, 0.5)'}}>+8.500 usuarios activos</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-white font-bold text-base">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                      <span>+18 Juego Responsable</span>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </motion.aside>
@@ -804,8 +660,8 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-red-900/30 py-6">
-        <div className="flex flex-col items-center gap-4">
+      <footer className="relative z-10 border-t border-red-900/30 py-3 mt-6 mb-0">
+        <div className="flex flex-col items-center gap-3">
           {/* Trust Badges */}
           <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
             <div className="flex items-center gap-2">
