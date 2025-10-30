@@ -63,7 +63,7 @@ export default function Home() {
         <img
           src="/zeus-gpt2.webp"
           alt="Zeus Background"
-          className="w-full h-full object-cover lg:object-contain lg:object-center"
+          className="w-full h-full object-cover object-center"
         />
       </div>
 
@@ -213,9 +213,9 @@ export default function Home() {
               className="relative"
               animate={{
                 filter: [
-                  'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                  'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                  'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
+                  'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
+                  'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
+                  'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
                 ],
                 scale: [1, 1.1, 1]
               }}
@@ -231,9 +231,9 @@ export default function Home() {
                 className="relative"
                 animate={{
                   filter: [
-                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                    'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                    'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
+                    'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
+                    'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
                   ],
                   scale: [1, 1.1, 1]
                 }}
@@ -245,9 +245,9 @@ export default function Home() {
                 className="relative"
                 animate={{
                   filter: [
-                    'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                    'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
+                    'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
+                    'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
+                    'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
                   ],
                   scale: [1, 1.1, 1]
                 }}
@@ -259,9 +259,9 @@ export default function Home() {
                 className="relative"
                 animate={{
                   filter: [
-                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                    'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                    'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                    'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
+                    'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
+                    'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
                   ],
                   scale: [1, 1.1, 1]
                 }}
@@ -384,12 +384,12 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick('secondary_button')}
-                className="bg-green-600/20 active:bg-green-600/30 border-2 border-green-500/50 text-white font-semibold text-xs px-3 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto"
+                className="bg-green-600/20 active:bg-green-600/30 border-2 border-green-500/50 text-white font-bold text-xs px-3 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto"
                 style={{width: '75%'}}
                 whileTap={{ scale: 0.95 }}
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-green-400" />
-                <span>Escribinos al WhatsApp</span>
+                <span style={{textShadow: '0 0 4px rgba(255, 255, 255, 0.8)'}}>Escribinos al WhatsApp</span>
               </motion.a>
             </div>
 
@@ -420,15 +420,15 @@ export default function Home() {
           </div>
         </div>
 
-        {/* DESKTOP: Two columns layout - Logo on top, cards left, Zeus + buttons right */}
-        <div className="hidden lg:flex flex-1 flex-col relative min-h-screen">
+        {/* DESKTOP: Layout con separación clara */}
+        <div className="hidden lg:flex flex-1 flex-col relative">
 
-          {/* Logo CASINO ZEUS - Full width on top */}
+          {/* Logo CASINO ZEUS - Arriba separado */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-center relative w-full pt-12 pb-16 px-8"
+            className="text-center pt-8 pb-12"
           >
             <img
               src="/cropped-logo-casino.png"
@@ -442,236 +442,234 @@ export default function Home() {
             />
           </motion.div>
 
-          {/* Two column layout - Cards Left, Buttons Right (Zeus background image) */}
-          <div className="grid grid-cols-2 gap-16 flex-1 items-center px-12 pb-16 w-full max-w-7xl mx-auto">
+          {/* Grid: 2 columnas - Cards izquierda, Botones derecha - Con margen arriba */}
+          <div className="flex-1 grid grid-cols-2 gap-20 items-center px-20 py-8">
 
-            {/* Left Column: 4 Feature Cards - 2x2 Grid */}
-            <motion.aside
+            {/* Columna izquierda: 4 Feature Cards en COLUMNA VERTICAL */}
+            <motion.div
               initial="hidden"
               animate="visible"
               variants={slideFromLeft}
-              className="flex items-center justify-end"
+              className="flex items-center justify-start"
             >
-              <motion.div
-                variants={fadeIn}
-                className="grid grid-cols-2 gap-4"
-              >
+              <div className="flex flex-col gap-6">
                 <motion.div
                   className="relative"
                   animate={{
                     filter: [
-                      'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                      'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                      'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
+                      'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
+                      'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
+                      'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
                     ],
                     scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <img src="/retiros-blueglow.png" alt="Retiros 24hs" style={{width: '180px', height: 'auto'}} className="object-contain" />
+                  <img src="/retiros-blueglow.png" alt="Retiros 24hs" style={{width: '220px', height: 'auto'}} className="object-contain" />
                 </motion.div>
                 <motion.div
                   className="relative"
                   animate={{
                     filter: [
-                      'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                      'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                      'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                      'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
+                      'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
+                      'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
                     ],
                     scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 >
-                  <img src="/pagos-blueglow.png" alt="Pagos Instantáneos" style={{width: '180px', height: 'auto'}} className="object-contain" />
+                  <img src="/pagos-blueglow.png" alt="Pagos Instantáneos" style={{width: '220px', height: 'auto'}} className="object-contain" />
                 </motion.div>
                 <motion.div
                   className="relative"
                   animate={{
                     filter: [
-                      'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                      'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                      'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
+                      'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
+                      'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
+                      'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
                     ],
                     scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
-                  <img src="/juegos-blueglow.png" alt="+5000 Juegos" style={{width: '180px', height: 'auto'}} className="object-contain" />
+                  <img src="/juegos-blueglow.png" alt="+5000 Juegos" style={{width: '220px', height: 'auto'}} className="object-contain" />
                 </motion.div>
                 <motion.div
                   className="relative"
                   animate={{
                     filter: [
-                      'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
-                      'drop-shadow(0 0 6px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.4))',
-                      'drop-shadow(0 0 8px rgba(255, 223, 0, 0.7)) drop-shadow(0 0 14px rgba(255, 215, 0, 0.4))',
+                      'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
+                      'drop-shadow(0 0 10px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 30px rgba(56, 189, 248, 0.3))',
+                      'drop-shadow(0 0 12px rgba(255, 223, 0, 0.9)) drop-shadow(0 0 24px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.3))',
                     ],
                     scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                 >
-                  <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '180px', height: 'auto'}} className="object-contain" />
+                  <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '220px', height: 'auto'}} className="object-contain" />
                 </motion.div>
-              </motion.div>
-            </motion.aside>
+              </div>
+            </motion.div>
 
-            {/* Right Column: CTA Buttons + Trust Badges */}
-            <motion.aside
+            {/* Columna derecha: CTA Buttons + Social Proof */}
+            <motion.div
               initial="hidden"
               animate="visible"
               variants={slideFromRight}
-              className="flex flex-col items-start justify-center gap-6"
+              className="flex flex-col items-start justify-center gap-40"
             >
               {/* CTA Buttons */}
-              <div className="flex flex-col gap-4 w-full">
-                <motion.a
-                  href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20mi%20usuario%20de%20Zeus"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => handleWhatsAppClick('main_button')}
-                  className="relative overflow-visible text-white font-black text-xl px-10 py-5 flex items-center justify-center gap-3 transition-all duration-300"
-                  style={{
-                    clipPath: 'polygon(16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px)',
-                    background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%)',
-                  }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+              <div className="flex flex-col gap-5 w-full">
+              <motion.a
+                href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20mi%20usuario%20de%20Zeus"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => handleWhatsAppClick('main_button')}
+                className="relative overflow-visible text-white font-black text-xl px-10 py-5 flex items-center justify-center gap-3 transition-all duration-300"
+                style={{
+                  clipPath: 'polygon(16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px)',
+                  background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%)',
+                }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{
+                  boxShadow: [
+                    "0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 3px 15px rgba(255, 255, 255, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.5)",
+                    "0 0 60px rgba(239, 68, 68, 1), 0 0 80px rgba(251, 191, 36, 0.8), 0 0 2px 2px rgba(251, 191, 36, 1), inset 0 3px 15px rgba(255, 255, 255, 0.4), inset 0 -3px 15px rgba(0, 0, 0, 0.6)",
+                    "0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 3px 15px rgba(255, 255, 255, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.5)"
+                  ],
+                }}
+                transition={{
+                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                }}
+              >
+                {/* Left Lightning Bolt */}
+                <motion.svg
+                  className="absolute left-6 top-1/2 -translate-y-1/2 z-10"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
                   animate={{
-                    boxShadow: [
-                      "0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 3px 15px rgba(255, 255, 255, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.5)",
-                      "0 0 60px rgba(239, 68, 68, 1), 0 0 80px rgba(251, 191, 36, 0.8), 0 0 2px 2px rgba(251, 191, 36, 1), inset 0 3px 15px rgba(255, 255, 255, 0.4), inset 0 -3px 15px rgba(0, 0, 0, 0.6)",
-                      "0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 3px 15px rgba(255, 255, 255, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.5)"
-                    ],
+                    opacity: [0.6, 1, 0.6, 1, 0.5, 0.8, 1, 0.6],
+                    scale: [1, 1.2, 1, 1.3, 0.95, 1.1, 1.25, 1],
+                    filter: [
+                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
+                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
+                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
+                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
+                      'drop-shadow(0 0 6px rgba(255,215,0,0.9))',
+                      'drop-shadow(0 0 8px rgba(255,215,0,1))',
+                      'drop-shadow(0 0 15px rgba(255,255,0,1)) drop-shadow(0 0 25px rgba(255,215,0,1))',
+                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
+                    ]
                   }}
                   transition={{
-                    boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                    duration: 4,
+                    repeat: Infinity,
+                    times: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1],
                   }}
                 >
-                  {/* Left Lightning Bolt */}
-                  <motion.svg
-                    className="absolute left-6 top-1/2 -translate-y-1/2 z-10"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    animate={{
-                      opacity: [0.6, 1, 0.6, 1, 0.5, 0.8, 1, 0.6],
-                      scale: [1, 1.2, 1, 1.3, 0.95, 1.1, 1.25, 1],
-                      filter: [
-                        'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                        'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                        'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                        'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                        'drop-shadow(0 0 6px rgba(255,215,0,0.9))',
-                        'drop-shadow(0 0 8px rgba(255,215,0,1))',
-                        'drop-shadow(0 0 15px rgba(255,255,0,1)) drop-shadow(0 0 25px rgba(255,215,0,1))',
-                        'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      ]
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      times: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1],
-                    }}
-                  >
-                    <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="2" />
-                  </motion.svg>
+                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="2" />
+                </motion.svg>
 
-                  <span className="uppercase tracking-wider drop-shadow-lg z-10 relative">¡Empezá ahora!</span>
+                <span className="uppercase tracking-wider drop-shadow-lg z-10 relative">¡Empezá ahora!</span>
 
-                  {/* Right Lightning Bolt */}
-                  <motion.svg
-                    className="absolute right-6 top-1/2 -translate-y-1/2 z-10"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    animate={{
-                      opacity: [0.6, 1, 0.6, 1, 0.5, 0.8, 1, 0.6],
-                      scale: [1, 1.2, 1, 1.3, 0.95, 1.1, 1.25, 1],
-                      filter: [
-                        'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                        'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                        'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                        'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                        'drop-shadow(0 0 6px rgba(255,215,0,0.9))',
-                        'drop-shadow(0 0 8px rgba(255,215,0,1))',
-                        'drop-shadow(0 0 15px rgba(255,255,0,1)) drop-shadow(0 0 25px rgba(255,215,0,1))',
-                        'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      ]
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      times: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1],
-                      delay: 2,
-                    }}
-                  >
-                    <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="2" />
-                  </motion.svg>
-
-                  {/* Animated shine effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-xl"
-                    animate={{ x: ["-100%", "200%"] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  />
-                </motion.a>
-
-                <motion.a
-                  href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20información%20sobre%20Zeus"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => handleWhatsAppClick('secondary_button')}
-                  className="bg-green-600/20 hover:bg-green-600/30 border-2 border-green-500/50 text-white font-semibold text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-3"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                {/* Right Lightning Bolt */}
+                <motion.svg
+                  className="absolute right-6 top-1/2 -translate-y-1/2 z-10"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  animate={{
+                    opacity: [0.6, 1, 0.6, 1, 0.5, 0.8, 1, 0.6],
+                    scale: [1, 1.2, 1, 1.3, 0.95, 1.1, 1.25, 1],
+                    filter: [
+                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
+                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
+                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
+                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
+                      'drop-shadow(0 0 6px rgba(255,215,0,0.9))',
+                      'drop-shadow(0 0 8px rgba(255,215,0,1))',
+                      'drop-shadow(0 0 15px rgba(255,255,0,1)) drop-shadow(0 0 25px rgba(255,215,0,1))',
+                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
+                    ]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    times: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1],
+                    delay: 2,
+                  }}
                 >
-                  <WhatsAppIcon className="w-6 h-6 text-green-400" />
-                  <span>Escribinos al WhatsApp</span>
-                </motion.a>
-              </div>
+                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="2" />
+                </motion.svg>
+
+                {/* Animated shine effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-xl"
+                  animate={{ x: ["-100%", "200%"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                />
+              </motion.a>
+
+              <motion.a
+                href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20información%20sobre%20Zeus"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => handleWhatsAppClick('secondary_button')}
+                className="bg-green-600/20 hover:bg-green-600/30 border-2 border-green-500/50 text-white font-semibold text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-3"
+                initial="hidden"
+                animate="visible"
+                variants={fadeIn}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <WhatsAppIcon className="w-6 h-6 text-green-400" />
+                <span>Escribinos al WhatsApp</span>
+              </motion.a>
+            </div>
 
               {/* Social Proof Badges - Desktop */}
               <motion.div
                 variants={fadeIn}
-                className="flex flex-col gap-3 w-full mt-4"
+                className="bg-white/5 border border-white/10 rounded-lg px-8 py-5 backdrop-blur-sm w-full"
               >
-                <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 backdrop-blur-sm">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-3 text-yellow-400 font-bold text-base">
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" style={{filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))'}}>
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
-                      </svg>
-                      <span style={{textShadow: '0 0 8px rgba(255, 215, 0, 0.8), 0 0 12px rgba(255, 215, 0, 0.5)'}}>+8.500 usuarios activos</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-white font-bold text-base">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                      <span>+18 Juego Responsable</span>
-                    </div>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-center gap-3 text-yellow-400 font-bold text-base">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" style={{filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))'}}>
+                      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                    </svg>
+                    <span style={{textShadow: '0 0 8px rgba(255, 215, 0, 0.8), 0 0 12px rgba(255, 215, 0, 0.5)'}}>+8.500 usuarios activos</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-3 text-white font-bold text-base">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span>+18 Juego Responsable</span>
                   </div>
                 </div>
               </motion.div>
-            </motion.aside>
+            </motion.div>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-red-900/30 py-3 mt-6 mb-0">
+      <footer className="relative z-10 border-t border-red-900/50 lg:border-red-900/70 py-4 lg:py-6 mt-6 mb-0">
         <div className="flex flex-col items-center gap-3">
           {/* Trust Badges */}
-          <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
+          <div className="flex items-center justify-center gap-6 text-sm text-gray-400 lg:text-gray-200 lg:text-base">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-              <span>Seguro y Confiable</span>
+              <div className="w-2 h-2 lg:w-3 lg:h-3 bg-red-400 lg:bg-red-500 rounded-full animate-pulse"></div>
+              <span className="lg:font-semibold">Seguro y Confiable</span>
             </div>
           </div>
 
           {/* Copyright */}
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 lg:text-gray-300 text-sm lg:text-base">
             © 2025 Zeus Casino - Todos los derechos reservados
           </p>
         </div>
