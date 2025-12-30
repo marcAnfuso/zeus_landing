@@ -61,7 +61,7 @@ export default function Home() {
       {/* Zeus GPT Background Image */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img
-          src="/zeus3.png"
+          src="/zeus3.webp"
           alt="Zeus Background"
           className="w-full h-full object-cover object-center"
         />
