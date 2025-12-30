@@ -61,17 +61,15 @@ export default function Home() {
       {/* Zeus GPT Background Image */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img
-          src="/zeus-gpt2.webp"
+          src="/zeus3.png"
           alt="Zeus Background"
           className="w-full h-full object-cover object-center"
         />
       </div>
 
       {/* Dark overlay for better text readability */}
-      <div className="fixed inset-0 bg-black/50 pointer-events-none" style={{zIndex: 1}}></div>
+      <div className="fixed inset-0 bg-black/25 pointer-events-none" style={{zIndex: 1}}></div>
 
-      {/* Salmon tint overlay */}
-      <div className="fixed inset-0 pointer-events-none" style={{zIndex: 1, backgroundColor: 'rgba(250, 128, 114, 0.15)'}}></div>
 
       {/* Animated red gradient background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -285,110 +283,51 @@ export default function Home() {
 
           {/* Bottom Section: Buttons */}
           <div className="w-full max-w-sm px-4">
+            {/* Bonus Banner - Mobile */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                rotate: [0, -1, 1, -1, 0]
+              }}
+              transition={{
+                opacity: { delay: 0.3, duration: 0.5 },
+                y: { delay: 0.3, duration: 0.5 },
+                rotate: { delay: 0.8, duration: 2, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="mb-3 px-3 py-2 rounded-lg text-center"
+              style={{
+                background: 'linear-gradient(135deg, rgba(251, 191, 36, 0.85) 0%, rgba(245, 158, 11, 0.9) 100%)',
+                border: '2px solid rgba(255, 215, 0, 0.8)',
+                boxShadow: '0 0 15px rgba(251, 191, 36, 0.4)',
+              }}
+            >
+              <p className="text-black font-extrabold text-sm">
+                🎁 Cargando $5.000 o más:
+              </p>
+              <p className="text-red-800 font-black text-sm">
+                Bono extra + Sorteos mensuales
+              </p>
+            </motion.div>
+
             <div className="flex flex-col gap-3 mb-2">
-              <motion.a
+              <a
                 href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20mi%20usuario%20de%20Zeus"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick('main_button')}
-                className="relative overflow-visible text-white font-black text-base px-6 py-2 flex items-center justify-center gap-2"
-                style={{
-                  clipPath: 'polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px)',
-                  background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%)',
-                }}
-                whileTap={{ scale: 0.95 }}
-                whileHover={{ scale: 1.02 }}
-                animate={{
-                  boxShadow: [
-                    "0 0 30px rgba(239, 68, 68, 0.8), 0 0 50px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 2px 10px rgba(255, 255, 255, 0.3), inset 0 -2px 10px rgba(0, 0, 0, 0.5)",
-                    "0 0 50px rgba(239, 68, 68, 1), 0 0 70px rgba(251, 191, 36, 0.8), 0 0 2px 2px rgba(251, 191, 36, 1), inset 0 2px 10px rgba(255, 255, 255, 0.4), inset 0 -2px 10px rgba(0, 0, 0, 0.6)",
-                    "0 0 30px rgba(239, 68, 68, 0.8), 0 0 50px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 2px 10px rgba(255, 255, 255, 0.3), inset 0 -2px 10px rgba(0, 0, 0, 0.5)"
-                  ],
-                }}
-                transition={{
-                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-                }}
+                className="relative text-white font-bold text-base px-10 py-3 text-center rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: '#E63946' }}
               >
-                {/* Left Lightning Bolt with Variable Thunder Effect - INSIDE */}
-                <motion.svg
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  animate={{
-                    opacity: [0.6, 1, 0.6, 1, 0.5, 0.8, 1, 0.6],
-                    scale: [1, 1.2, 1, 1.3, 0.95, 1.1, 1.25, 1],
-                    filter: [
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 6px rgba(255,215,0,0.9))',
-                      'drop-shadow(0 0 8px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 15px rgba(255,255,0,1)) drop-shadow(0 0 25px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                    ]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    times: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1],
-                  }}
-                >
-                  <path
-                    d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"
-                    fill="#FFD700"
-                    stroke="#FFA500"
-                    strokeWidth="2"
-                  />
-                </motion.svg>
-
-                {/* Right Lightning Bolt with Variable Thunder Effect - INSIDE */}
-                <motion.svg
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  animate={{
-                    opacity: [0.6, 1, 0.6, 1, 0.5, 0.8, 1, 0.6],
-                    scale: [1, 1.2, 1, 1.3, 0.95, 1.1, 1.25, 1],
-                    filter: [
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 6px rgba(255,215,0,0.9))',
-                      'drop-shadow(0 0 8px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 15px rgba(255,255,0,1)) drop-shadow(0 0 25px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                    ]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    times: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1],
-                    delay: 2,
-                  }}
-                >
-                  <path
-                    d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"
-                    fill="#FFD700"
-                    stroke="#FFA500"
-                    strokeWidth="2"
-                  />
-                </motion.svg>
-
-                <span className="uppercase tracking-wider drop-shadow-lg z-10 relative">¡Empezá ahora!</span>
-
-                {/* Animated shine effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-xl"
-                  animate={{ x: ["-100%", "200%"] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                />
-              </motion.a>
+                <svg className="absolute left-3 w-5 h-5" viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="1.5" />
+                </svg>
+                ¡EMPEZÁ AHORA!
+                <svg className="absolute right-3 w-5 h-5" viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="1.5" />
+                </svg>
+              </a>
 
               <motion.a
                 href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20información%20sobre%20Zeus"
@@ -397,6 +336,15 @@ export default function Home() {
                 onClick={() => handleWhatsAppClick('secondary_button')}
                 className="bg-green-600 active:bg-green-700 border-2 border-green-500 text-white font-bold text-xs px-3 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto"
                 style={{width: '75%'}}
+                animate={{
+                  x: [0, -3, 3, -3, 3, 0],
+                }}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatDelay: 2,
+                  ease: "easeInOut"
+                }}
                 whileTap={{ scale: 0.95 }}
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-green-400" />
@@ -532,99 +480,50 @@ export default function Home() {
             >
               {/* CTA Buttons */}
               <div className="flex flex-col gap-5 w-full">
-              <motion.a
+                {/* Bonus Banner - Desktop */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    rotate: [0, -1, 1, -1, 0]
+                  }}
+                  transition={{
+                    opacity: { delay: 0.3, duration: 0.5 },
+                    y: { delay: 0.3, duration: 0.5 },
+                    rotate: { delay: 0.8, duration: 2, repeat: Infinity, ease: "easeInOut" }
+                  }}
+                  className="px-5 py-3 rounded-lg text-center"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(251, 191, 36, 0.85) 0%, rgba(245, 158, 11, 0.9) 100%)',
+                    border: '2px solid rgba(255, 215, 0, 0.8)',
+                    boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)',
+                  }}
+                >
+                  <p className="text-black font-extrabold text-base">
+                    🎁 Cargando $5.000 o más:
+                  </p>
+                  <p className="text-red-800 font-black text-base">
+                    Bono extra + Sorteos mensuales
+                  </p>
+                </motion.div>
+
+              <a
                 href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20mi%20usuario%20de%20Zeus"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick('main_button')}
-                className="relative overflow-visible text-white font-black text-xl px-10 py-5 flex items-center justify-center gap-3 transition-all duration-300"
-                style={{
-                  clipPath: 'polygon(16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px)',
-                  background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%)',
-                }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                animate={{
-                  boxShadow: [
-                    "0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 3px 15px rgba(255, 255, 255, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.5)",
-                    "0 0 60px rgba(239, 68, 68, 1), 0 0 80px rgba(251, 191, 36, 0.8), 0 0 2px 2px rgba(251, 191, 36, 1), inset 0 3px 15px rgba(255, 255, 255, 0.4), inset 0 -3px 15px rgba(0, 0, 0, 0.6)",
-                    "0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(251, 191, 36, 0.6), 0 0 2px 1px rgba(251, 191, 36, 0.8), inset 0 3px 15px rgba(255, 255, 255, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.5)"
-                  ],
-                }}
-                transition={{
-                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-                }}
+                className="relative text-white font-bold text-xl px-12 py-5 text-center rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: '#E63946' }}
               >
-                {/* Left Lightning Bolt */}
-                <motion.svg
-                  className="absolute left-6 top-1/2 -translate-y-1/2 z-10"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  animate={{
-                    opacity: [0.6, 1, 0.6, 1, 0.5, 0.8, 1, 0.6],
-                    scale: [1, 1.2, 1, 1.3, 0.95, 1.1, 1.25, 1],
-                    filter: [
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 6px rgba(255,215,0,0.9))',
-                      'drop-shadow(0 0 8px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 15px rgba(255,255,0,1)) drop-shadow(0 0 25px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                    ]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    times: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1],
-                  }}
-                >
-                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="2" />
-                </motion.svg>
-
-                <span className="uppercase tracking-wider drop-shadow-lg z-10 relative">¡Empezá ahora!</span>
-
-                {/* Right Lightning Bolt */}
-                <motion.svg
-                  className="absolute right-6 top-1/2 -translate-y-1/2 z-10"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  animate={{
-                    opacity: [0.6, 1, 0.6, 1, 0.5, 0.8, 1, 0.6],
-                    scale: [1, 1.2, 1, 1.3, 0.95, 1.1, 1.25, 1],
-                    filter: [
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                      'drop-shadow(0 0 12px rgba(255,255,0,1)) drop-shadow(0 0 20px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 6px rgba(255,215,0,0.9))',
-                      'drop-shadow(0 0 8px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 15px rgba(255,255,0,1)) drop-shadow(0 0 25px rgba(255,215,0,1))',
-                      'drop-shadow(0 0 4px rgba(255,215,0,0.8))',
-                    ]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    times: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1],
-                    delay: 2,
-                  }}
-                >
-                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="2" />
-                </motion.svg>
-
-                {/* Animated shine effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-xl"
-                  animate={{ x: ["-100%", "200%"] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                />
-              </motion.a>
+                <svg className="absolute left-4 w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="1.5" />
+                </svg>
+                ¡EMPEZÁ AHORA!
+                <svg className="absolute right-4 w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="1.5" />
+                </svg>
+              </a>
 
               <motion.a
                 href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20información%20sobre%20Zeus"
@@ -632,8 +531,15 @@ export default function Home() {
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick('secondary_button')}
                 className="bg-green-600/20 hover:bg-green-600/30 border-2 border-green-500/50 text-white font-semibold text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-3"
-                initial="hidden"
-                animate="visible"
+                animate={{
+                  x: [0, -4, 4, -4, 4, 0],
+                }}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatDelay: 2,
+                  ease: "easeInOut"
+                }}
                 variants={fadeIn}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
