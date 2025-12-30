@@ -68,7 +68,10 @@ export default function Home() {
       </div>
 
       {/* Dark overlay for better text readability */}
-      <div className="fixed inset-0 bg-black/60 pointer-events-none" style={{zIndex: 1}}></div>
+      <div className="fixed inset-0 bg-black/50 pointer-events-none" style={{zIndex: 1}}></div>
+
+      {/* Salmon tint overlay */}
+      <div className="fixed inset-0 pointer-events-none" style={{zIndex: 1, backgroundColor: 'rgba(250, 128, 114, 0.15)'}}></div>
 
       {/* Animated red gradient background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -184,22 +187,30 @@ export default function Home() {
             className="text-center relative w-full px-4 mb-6"
             style={{overflow: 'visible', lineHeight: 0}}
           >
-            <img
+            <motion.img
               src="/cropped-logo-casino.png"
               alt="Casino Zeus"
               className="w-full h-auto max-w-md mx-auto"
               style={{
                 maxHeight: '100px',
                 objectFit: 'contain',
-                filter: 'drop-shadow(0 0 6px rgba(0, 0, 0, 0.9)) drop-shadow(-4px 0 15px rgba(250, 128, 114, 0.8)) drop-shadow(-8px 0 25px rgba(250, 128, 114, 0.6)) drop-shadow(4px 0 15px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 35px rgba(220, 38, 38, 0.4))',
+                filter: 'brightness(0.85) contrast(1.15) drop-shadow(0 0 3px rgba(0, 0, 0, 1)) drop-shadow(0 0 10px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 35px rgba(220, 38, 38, 0.8)) drop-shadow(0 0 50px rgba(220, 38, 38, 0.5))',
                 display: 'block',
                 verticalAlign: 'top'
+              }}
+              animate={{
+                scale: [1, 1.06, 1],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut"
               }}
             />
           </motion.div>
 
           {/* Spacer for Zeus background image visibility */}
-          <div className="w-full" style={{height: '280px'}}></div>
+          <div className="w-full" style={{height: '240px'}}></div>
 
           {/* 4 Feature Boxes - 1 on top, 3 on bottom - Just above buttons */}
           <motion.div
@@ -384,7 +395,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick('secondary_button')}
-                className="bg-green-600/20 active:bg-green-600/30 border-2 border-green-500/50 text-white font-bold text-xs px-3 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto"
+                className="bg-green-600 active:bg-green-700 border-2 border-green-500 text-white font-bold text-xs px-3 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto"
                 style={{width: '75%'}}
                 whileTap={{ scale: 0.95 }}
               >
