@@ -17,16 +17,27 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+// Links de WhatsApp rotativos
+const WHATSAPP_LINKS = [
+  'https://wa.pe/ULLukKk8pQ',  // API 6261
+  'https://wa.pe/bI4qV96x4J', // API 4929
+  'https://wa.pe/otx4qopMNF', // API 0099
+];
+
 export default function Home() {
-  const { trackLead } = useMetaTracking();
+  const { trackWhatsAppClick } = useMetaTracking();
   const [mounted, setMounted] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState(WHATSAPP_LINKS[0]);
 
   useEffect(() => {
     setMounted(true);
+    // Aleatorio puro
+    const randomIndex = Math.floor(Math.random() * WHATSAPP_LINKS.length);
+    setWhatsappLink(WHATSAPP_LINKS[randomIndex]);
   }, []);
 
-  const handleWhatsAppClick = (source: 'main_button' | 'secondary_button') => {
-    trackLead(source);
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick();
   };
 
   // Animation variants
@@ -313,10 +324,10 @@ export default function Home() {
 
             <div className="flex flex-col gap-3 mb-2">
               <a
-                href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20mi%20usuario%20de%20Zeus"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => handleWhatsAppClick('main_button')}
+                onClick={handleWhatsAppClick}
                 className="relative text-white font-bold text-base px-10 py-3 text-center rounded-xl flex items-center justify-center"
                 style={{ backgroundColor: '#E63946' }}
               >
@@ -330,10 +341,10 @@ export default function Home() {
               </a>
 
               <motion.a
-                href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20información%20sobre%20Zeus"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => handleWhatsAppClick('secondary_button')}
+                onClick={handleWhatsAppClick}
                 className="bg-green-600 active:bg-green-700 border-2 border-green-500 text-white font-bold text-xs px-3 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto"
                 style={{width: '75%'}}
                 animate={{
@@ -509,10 +520,10 @@ export default function Home() {
                 </motion.div>
 
               <a
-                href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20mi%20usuario%20de%20Zeus"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => handleWhatsAppClick('main_button')}
+                onClick={handleWhatsAppClick}
                 className="relative text-white font-bold text-xl px-12 py-5 text-center rounded-xl flex items-center justify-center"
                 style={{ backgroundColor: '#E63946' }}
               >
@@ -526,10 +537,10 @@ export default function Home() {
               </a>
 
               <motion.a
-                href="https://api.whatsapp.com/send?phone=541128872681&text=Hola%20quiero%20información%20sobre%20Zeus"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => handleWhatsAppClick('secondary_button')}
+                onClick={handleWhatsAppClick}
                 className="bg-green-600/20 hover:bg-green-600/30 border-2 border-green-500/50 text-white font-semibold text-lg px-8 py-4 rounded-lg flex items-center justify-center gap-3"
                 animate={{
                   x: [0, -4, 4, -4, 4, 0],
