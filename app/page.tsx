@@ -598,7 +598,7 @@ export default function Home() {
 
           {/* Copyright */}
           <p className="text-gray-500 lg:text-gray-300 text-sm lg:text-base">
-            © 2025 Zeus Casino - Todos los derechos reservados
+            © 2026 Zeus Casino - Todos los derechos reservados
           </p>
         </div>
       </footer>
