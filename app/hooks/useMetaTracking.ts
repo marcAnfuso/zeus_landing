@@ -14,8 +14,11 @@ export function useMetaTracking() {
   // Click en WhatsApp
   const trackWhatsAppClick = useCallback(() => {
     if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('trackCustom', 'ClickWhatsapp1');
-      console.log('Meta Pixel: ClickWhatsapp1 enviado');
+      window.fbq('trackCustom', 'ClickWhatsapp1', {
+        value: 2.5,
+        currency: 'USD'
+      });
+      console.log('Meta Pixel: ClickWhatsapp1 enviado con valor $2.5 USD');
     }
   }, []);
 
