@@ -193,7 +193,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-center relative w-full px-4 mb-6"
+            className="text-center relative w-full px-4 mb-2"
             style={{overflow: 'visible', lineHeight: 0}}
           >
             <motion.img
@@ -219,14 +219,14 @@ export default function Home() {
           </motion.div>
 
           {/* Spacer for Zeus background image visibility */}
-          <div className="w-full" style={{height: '240px'}}></div>
+          <div className="w-full" style={{height: '200px'}}></div>
 
           {/* 4 Feature Boxes - 1 on top, 3 on bottom - Just above buttons */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="flex flex-col gap-2 mb-6 items-center"
+            className="flex flex-col gap-2 mb-3 items-center"
           >
             {/* Top Row: Retiros card centered - same width as 3 cards below */}
             <motion.div
@@ -329,7 +329,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
                 className="relative text-white font-bold text-base px-10 py-3 text-center rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: '#E63946' }}
+                style={{ backgroundColor: '#22c55e' }}
               >
                 <svg className="absolute left-3 w-5 h-5" viewBox="0 0 24 24" fill="none">
                   <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="1.5" />
@@ -525,7 +525,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
                 className="relative text-white font-bold text-xl px-12 py-5 text-center rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: '#E63946' }}
+                style={{ backgroundColor: '#22c55e' }}
               >
                 <svg className="absolute left-4 w-6 h-6" viewBox="0 0 24 24" fill="none">
                   <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#FFD700" stroke="#FFA500" strokeWidth="1.5" />
