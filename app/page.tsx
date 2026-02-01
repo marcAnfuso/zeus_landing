@@ -19,9 +19,9 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 // Links de WhatsApp rotativos
 const WHATSAPP_LINKS = [
-  'https://wa.pe/ULLukKk8pQ',  // API 6261
-  'https://wa.pe/bI4qV96x4J', // API 4929
-  'https://wa.pe/otx4qopMNF', // API 0099
+  'https://wa.pe/ctRriy5tzt',  // API 1 - 6261
+  'https://wa.pe/D6uKpoS6js', // API 2 - 4929
+  'https://wa.pe/KlvfuaykkU', // API 3 - 0099
 ];
 
 export default function Home() {
